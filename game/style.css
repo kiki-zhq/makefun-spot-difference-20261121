@@ -1,0 +1,56 @@
+/* Twinkle Town — layout and look. Warm paper, deep navy panels, big clear
+   counter: the judge (and the player) must read the game at a glance. */
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: #fdf6e3; color: #2b2118;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+header { max-width: 1280px; margin: 0 auto; padding: 8px 20px 2px; text-align: center; }
+h1 { margin: 0; font-size: 26px; letter-spacing: 0.5px; color: #c0392b; font-family: Georgia, serif; }
+header p { margin: 2px 0 0; color: #6b5844; font-size: 14px; }
+#hud { max-width: 1280px; margin: 6px auto 0; padding: 0 20px; display: flex;
+  gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.pill { background: #fff; border: 2px solid #e8d9b8; border-radius: 999px;
+  padding: 7px 14px; font-weight: 700; font-size: 15px; }
+#counter { background: #2b3a67; color: #ffe9a8; border-color: #2b3a67; font-size: 17px; }
+#counter.done { background: #2a9d8f; border-color: #2a9d8f; color: #fff; }
+button { cursor: pointer; border: 2px solid #c0392b; background: #c0392b; color: #fff;
+  border-radius: 999px; padding: 7px 14px; font-weight: 700; font-size: 15px; }
+button:disabled { opacity: 0.45; cursor: default; }
+button.ghost { background: #fff; color: #c0392b; }
+#levels { max-width: 1280px; margin: 7px auto 0; padding: 0 20px; display: flex;
+  gap: 8px; justify-content: center; flex-wrap: wrap; }
+.level-tab { background: #fff; color: #5b3a1e; border-color: #e8d9b8; }
+.level-tab.active { background: #2b3a67; color: #ffe9a8; border-color: #2b3a67; }
+#scene-name { text-align: center; font-family: Georgia, serif; font-size: 18px;
+  margin: 6px 0 0; color: #5b3a1e; }
+#panels { max-width: 1280px; margin: 6px auto 0; padding: 0 16px; display: flex;
+  gap: 16px; justify-content: center; }
+.panel-wrap { flex: 1 1 0; max-width: 620px; }
+.panel-label { text-align: center; font-weight: 800; letter-spacing: 2px;
+  font-size: 13px; color: #8a5a2b; text-transform: uppercase; margin-bottom: 4px; }
+.panel { position: relative; border: 4px solid #2b3a67; border-radius: 12px;
+  overflow: hidden; background: #fff; cursor: crosshair; box-shadow: 0 6px 18px rgba(43, 58, 103, 0.18); }
+.panel svg { display: block; width: 100%; height: auto; }
+#toast { text-align: center; min-height: 24px; margin: 8px 0 0; font-size: 16px;
+  font-weight: 600; color: #2a9d8f; }
+#status { position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap; }
+.miss { position: absolute; transform: translate(-50%, -50%); color: #e63946;
+  font-size: 28px; font-weight: 900; pointer-events: none;
+  animation: fade 0.7s forwards; text-shadow: 0 0 4px #fff; }
+.hint-ring { position: absolute; transform: translate(-50%, -50%); border: 4px solid #f2c94c;
+  border-radius: 50%; pointer-events: none; animation: pulse 0.8s infinite alternate;
+  box-shadow: 0 0 0 4px rgba(242, 201, 76, 0.35); }
+@keyframes pulse { from { opacity: 0.5; } to { opacity: 1; } }
+@keyframes fade { from { opacity: 1; } to { opacity: 0; } }
+#overlay { position: fixed; inset: 0; background: rgba(43, 58, 103, 0.55);
+  display: flex; align-items: center; justify-content: center; z-index: 10; }
+#overlay.hidden { display: none; }
+.card { background: #fffdf4; border-radius: 16px; padding: 28px 36px; text-align: center;
+  max-width: 460px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); }
+.card h2 { margin: 0 0 8px; color: #c0392b; font-family: Georgia, serif; }
+.card p { margin: 6px 0; }
+.card .big { font-size: 20px; font-weight: 800; }
+.card button { margin-top: 10px; font-size: 17px; padding: 10px 20px; }
+footer { max-width: 1280px; margin: 6px auto 16px; padding: 0 20px; text-align: center;
+  color: #8a7a64; font-size: 13px; }
+@media (max-width: 760px) { #panels { flex-direction: column; align-items: center; } h1 { font-size: 24px; } }

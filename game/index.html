@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twinkle Town — Spot the Difference</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header>
+  <h1>🔍 Twinkle Town — Spot the Difference</h1>
+  <p>Two pictures, seven hidden changes. Click a difference on either side to circle it on both.</p>
+</header>
+<div id="hud">
+  <span class="pill" id="counter">Found 0 / 7 · 7 left</span>
+  <span class="pill" id="score">Score 0</span>
+  <span class="pill" id="timer">Time 0:00</span>
+  <button id="hint-btn">💡 Hint (3)</button>
+  <button id="restart-btn" class="ghost">↻ Restart scene</button>
+  <button id="mute-btn" class="ghost">🔊 Sound</button>
+</div>
+<div id="levels">
+  <button class="level-tab active">1 · Moonlight Bakery</button>
+  <button class="level-tab">2 · Firefly Garden</button>
+  <button class="level-tab">3 · Cosy Book Nook</button>
+</div>
+<h2 id="scene-name">Moonlight Bakery</h2>
+<div id="panels">
+  <div class="panel-wrap">
+    <div class="panel-label">Picture A</div>
+    <div class="panel" id="left-panel"></div>
+  </div>
+  <div class="panel-wrap">
+    <div class="panel-label">Picture B</div>
+    <div class="panel" id="right-panel"></div>
+  </div>
+</div>
+<p id="toast">Find all 7 differences — some are tiny, none are unfair.</p>
+<p id="status" role="status" aria-live="polite"></p>
+<div id="overlay" class="hidden"></div>
+<footer>Twinkle Town is an original game. Keys: H hint · R restart · 1/2/3 scenes · N next scene · M mute. No network, no tracking — everything runs from these files.</footer>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
